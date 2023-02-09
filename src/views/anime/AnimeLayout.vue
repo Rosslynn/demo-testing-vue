@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>i am the anime layout</h1>
+    <h1>Top Animes</h1>
     <router-view></router-view>
   </div>
 </template>

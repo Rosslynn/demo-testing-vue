@@ -8,8 +8,8 @@ const baseURL = 'https://api.jikan.moe/v4';
  * Función para obtener el listado de animes recomendados
  * @returns Promesa con la respuesta
  */
-export function getAnimeRecomendations() {
-  const url = `${baseURL}/recommendations/anime`;
+export function getTopAnimes() {
+  const url = `${baseURL}/top/anime`;
   return makeGetRequest(url);
 }
 

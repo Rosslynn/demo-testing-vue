@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Inicio</router-link> |
-      <router-link to="/about">Acerca de</router-link>
+      <router-link to="/animes">Animes</router-link> |
+      <router-link to="/mangas">Mangas</router-link> |
+      <router-link to="/">Lemon Boy</router-link>
     </nav>
     <router-view/>
   </div>
