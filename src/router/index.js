@@ -1,22 +1,31 @@
+import AnimeLayout from '@/views/anime/AnimeLayout.vue';
+import AnimeRecomendationsVue from '@/views/anime/AnimeRecomendations.vue';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import HomeView from '../views/HomeView.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView,
+    path: '/animes',
+    name: 'animes',
+    component: AnimeLayout,
+    children: [
+      {
+        path: '',
+        name: 'anime-recomendations',
+        component: AnimeRecomendationsVue,
+      },
+      {
+        path: ':id',
+        name: 'anime-information',
+        component: () => import('@/views/anime/AnimeInformation.vue'),
+      },
+    ],
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+    path: '*',
+    redirect: { name: 'animes' },
   },
 ];
 
