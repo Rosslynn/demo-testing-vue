@@ -1,8 +1,8 @@
-import AnimeRecomendations from '@/views/anime/AnimeRecomendations.vue';
 import {
   createLocalVue, shallowMount,
 } from '@vue/test-utils';
 import Vuex from 'vuex';
+import AnimeRecomendations from '../views/anime/AnimeRecomendations.vue';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
@@ -26,12 +26,12 @@ const store = new Vuex.Store({
         animes,
       },
       actions: {
-        getAnimes: jest.fn(),
+        getAnimes: vi.fn(),
       },
     },
   },
 });
-store.dispatch = jest.fn();
+store.dispatch = vi.fn();
 
 let wrapper;
 

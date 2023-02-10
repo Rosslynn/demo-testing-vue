@@ -1,5 +1,5 @@
 /* eslint-disable no-shadow */
-import { getTopAnimes, getAnimeById } from '@/services/animeService';
+import { getTopAnimes, getAnimeById } from '../../services/animeService';
 
 const state = () => ({
   animes: [],
