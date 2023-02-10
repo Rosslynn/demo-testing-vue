@@ -50,11 +50,11 @@ describe('AnimeRecomendations', () => {
     describe('AnimeCard', () => {
       it('renders one for each anime returned from the API', () => {
         const expectedProps = animes.map(({ mal_id, ...anime }) => ({ ...anime, id: mal_id }));
+
         wrapper = shallowMount(AnimeRecomendations, {
           store,
           localVue,
         });
-
         const animeCards = wrapper.findAllComponents({ name: 'AnimeCard' });
 
         expect(animeCards).toHaveLength(animes.length);

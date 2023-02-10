@@ -48,7 +48,6 @@ describe('anime', () => {
         };
 
         getTopAnimes.mockResolvedValue(mockAnimeList);
-
         await animeModule.actions.getAnimes({ commit });
 
         expect(getTopAnimes).toHaveBeenCalledOnce();

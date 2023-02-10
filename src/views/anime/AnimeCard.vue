@@ -1,6 +1,6 @@
 <template>
   <div class="anime-card">
-    <router-link :to="{ name: 'anime-information', params: { id }}">
+    <router-link data-test-id="anime-card" :to="{ name: 'anime-information', params: { id }}">
       {{  id  }} - {{  title  }}
     </router-link>
   </div>
