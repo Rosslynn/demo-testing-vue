@@ -48,6 +48,7 @@ describe('anime', () => {
         };
 
         getTopAnimes.mockResolvedValue(mockAnimeList);
+
         await animeModule.actions.getAnimes({ commit });
 
         expect(getTopAnimes).toHaveBeenCalledOnce();
@@ -68,7 +69,7 @@ describe('anime', () => {
         getAnimeById.mockResolvedValue(mockAnimeInformation);
         await animeModule.actions.getAnime({ commit }, anime.id);
 
-        expect(getAnimeById).toHaveBeenCalledWith('anime.id');
+        expect(getAnimeById).toHaveBeenCalledWith(anime.id);
         expect(commit).toHaveBeenCalledWith('SET_ANIME', anime);
       });
     });

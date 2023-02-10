@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import {
   createLocalVue, shallowMount,
 } from '@vue/test-utils';
@@ -48,6 +49,7 @@ describe('AnimeRecomendations', () => {
   describe('when the list of animes has been loaded successfully', () => {
     describe('AnimeCard', () => {
       it('renders one for each anime returned from the API', () => {
+        const expectedProps = animes.map(({ mal_id, ...anime }) => ({ ...anime, id: mal_id }));
         wrapper = shallowMount(AnimeRecomendations, {
           store,
           localVue,
@@ -56,6 +58,9 @@ describe('AnimeRecomendations', () => {
         const animeCards = wrapper.findAllComponents({ name: 'AnimeCard' });
 
         expect(animeCards).toHaveLength(animes.length);
+        expectedProps.forEach((props, index) => {
+          expect(animeCards.at(index).props()).toEqual(props);
+        });
       });
     });
   });
