@@ -9,7 +9,7 @@
     </div>
 
     <div>
-      <strong>Información: </strong> {{  anime.background  }}
+      <strong>Información: </strong> {{  anime.background || 'N/A' }}
     </div>
   </div>
 </template>
